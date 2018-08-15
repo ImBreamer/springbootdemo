@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.breamer.demo.dao.secondary.StudentDAO">
+    <!--查询列表 -->
+    <select id="studentList" resultType="com.breamer.demo.entity.secondary.Student">
+    	select s_id, s_name, s_age
+        from student
+        order by s_id
+        desc
+	</select>
+    <insert id="addStudent" parameterType="com.breamer.demo.entity.secondary.Student">
+        INSERT INTO student (s_name,s_age) VALUES(#{sName},#{sAge})
+    </insert>
+</mapper>
